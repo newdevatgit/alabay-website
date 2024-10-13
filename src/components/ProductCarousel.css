@@ -1,0 +1,102 @@
+.product-carousel-container {
+  border-color: black;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  /* background-color: blanchedalmond; */
+  border-radius: 20px;
+  overflow: hidden; /* add this to prevent absolute elements from overflowing */
+  position: relative; /* Add this */
+}
+
+.product-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  background-repeat: no-repeat;
+}
+
+.product-carousel-inner {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-discover-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.product-discover-button:hover {
+  background-color: #ddd;
+}
+
+.product-arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1; /* add this to ensure the arrows are on top of the background image */
+}
+
+.product-prev-arrow, .product-next-arrow {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.product-prev-arrow:hover, .product-next-arrow:hover {
+  background-color: #ddd;
+}
+
+.product-text-boxes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1; /* add this to ensure the text boxes are on top of the background image */
+}
+
+.product-bottom-left {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.product-top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}

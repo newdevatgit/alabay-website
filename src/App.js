@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Box from "./components/Box";
+import Carousel from "./components/Carousel";
+import ProductCarousel from "./components/ProductCarousel";
 
-function App() {
+const App = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const newOpacity = Math.min(scrollPosition / windowHeight, 1);
+      setOpacity(newOpacity);
+      setScrolled(scrollPosition > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="background-image"></div>
+      <div className="overlay" style={{ opacity: opacity }}></div>
+      <div className={`content ${scrolled ? "visible" : ""}`}>
+        <div className="content-inner">
+          <div className="rounded-rectangle"></div>
+          {/* Add more content as needed */}
+          <Box
+            className="boxstyle1"
+            image="/Alabay Assets/image1.png"
+            heading={
+              <span>
+                History Of <span>ALABAY</span>
+              </span>
+            }
+            subheading="The Central Asian Shepherd Dog, also known as Alabay, has been a guardian of livestock and property for centuries. Originating from Central Asia, these dogs are renowned for their courage, strength, and loyalty."
+          />
+          <Carousel />
+
+          <div className="product-carousel-wrapper">
+            <ProductCarousel />
+          </div>
+          <Box
+            className="boxstyle2"
+            heading="PROJECT VISION"
+            image="/Alabay Assets/image2.png"
+            subheading="Our mission is to honor the heritage of the Alabay by creating a vibrant, loyal, and powerful community. Just as the Alabay protects its flock, we aim to build a pack that stands strong together."
+          />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
