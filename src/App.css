@@ -74,7 +74,7 @@
 .content-inner .rectangle-background {
   position: relative;
   top: -9vw;
-  width: 95vw;
+  width: 96vw;
   /* max-width: 100%; */
   height: 60vw;
   background: radial-gradient(42.38% 44.19% at 50.14% 67.33%, #FFF280 0%, #FFC700 100%);
@@ -126,7 +126,7 @@
   font-weight: 900;
   line-height: 1.2;
   text-align: center;
-  color: white; /* Adjust color as needed */
+  color: #FFA800; /* Adjust color as needed */
 }
 
 .content .boxstyle2 .background-image {
@@ -142,4 +142,70 @@
   line-height: 1.4;
   text-align: center;
   color: #353535; /* Adjust color as needed */
+}
+
+
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+  .content {
+    margin: 80vh 4vw 0 4vw;
+  }
+  .content-inner {
+    padding: 15px;
+  }
+  .content-inner .rectangle-background {
+    width: 90vw;
+    height: 50vw;
+  }
+  .content-inner .rectangle-background .rounded-rectangle {
+    width: 10vw;
+    height: 1.2vw;
+  }
+  .content-inner .rectangle-background .boxstyle1 {
+    padding: 15px;
+    margin: 15px auto;
+  }
+  .content .boxstyle1 .heading {
+    font-size: 20px;
+  }
+  .content .boxstyle1 .description {
+    font-size: 14px;
+  }
+  .content .boxstyle1 .button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    margin: 70vh 2vw 0 2vw;
+  }
+  .content-inner {
+    padding: 10px;
+  }
+  .content-inner .rectangle-background {
+    width: 80vw;
+    height: 40vw;
+  }
+  .content-inner .rectangle-background .rounded-rectangle {
+    width: 8vw;
+    height: 1vw;
+  }
+  .content-inner .rectangle-background .boxstyle1 {
+    padding: 10px;
+    margin: 10px auto;
+  }
+  .content .boxstyle1 .heading {
+    font-size: 18px;
+  }
+  .content .boxstyle1 .description {
+    font-size: 12px;
+  }
+  .content .boxstyle1 .button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
 }
