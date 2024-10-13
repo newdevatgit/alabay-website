@@ -1,12 +1,15 @@
 .product-carousel-container {
-  border-color: black;
-  align-items: center;
   display: flex;
-  flex-direction: row;
-  /* background-color: blanchedalmond; */
+  flex-wrap: wrap;
+  position: relative;
+  width: 85%;
+  height: auto;
+  margin: 5vw auto;
+  overflow: hidden;
+  padding: 0;
   border-radius: 20px;
-  overflow: hidden; /* add this to prevent absolute elements from overflowing */
-  position: relative; /* Add this */
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-background-image {
@@ -17,86 +20,59 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  z-index: -1;
   background-repeat: no-repeat;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
 }
 
 .product-carousel-inner {
   position: relative;
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
   padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-image {
   width: 100%;
-  height: 300px;
+  height: 80%;
   object-fit: cover;
   border-radius: 10px;
-}
-
-.product-discover-button {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.product-discover-button:hover {
-  background-color: #ddd;
+  transition: all 0.5s ease-in-out;
 }
 
 .product-arrows {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   width: 100%;
   display: flex;
   justify-content: space-between;
-  z-index: 1; /* add this to ensure the arrows are on top of the background image */
+  z-index: 1;
 }
 
-.product-prev-arrow, .product-next-arrow {
+.product-prev-arrow {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
   background-color: #fff;
   border: none;
   border-radius: 50%;
-  padding: 10px 20px;
+  padding: 20px 25px;
   cursor: pointer;
 }
 
-.product-prev-arrow:hover, .product-next-arrow:hover {
-  background-color: #ddd;
-}
-
-.product-text-boxes {
+.product-next-arrow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  z-index: 1; /* add this to ensure the text boxes are on top of the background image */
-}
-
-.product-bottom-left {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.product-top-right {
-  position: absolute;
-  top: 20px;
+  top: 50%;
   right: 20px;
+  transform: translateY(-50%);
   background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
+  border: none;
+  border-radius: 50%;
+  padding: 20px 25px;
+  cursor: pointer;
 }

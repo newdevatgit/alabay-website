@@ -1,26 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import './ProductCarousel.css';
+import React, { useState, useEffect } from "react";
+import "./ProductCarousel.css";
 
 const ProductCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const products = [
     {
-      image: '/Alabay Assets/Alabay Merch/black hoodie.png',
-      backgroundImage: '/Alabay Assets/Alabay Merch/black hoodie bck.png',
-      title: 'Black Hoodie',
-      description: 'This is a black hoodie',
+      image:
+        "https://github.com/newdevatgit/alabay-website/blob/41e1ab58d4c1872dd0e84039b2962c1c5aa23e14/public/Alabay%20Assets/Alabay%20Merch/black%20hoodie.png?raw=true",
+      backgroundImage:
+        "https://github.com/newdevatgit/alabay-website/blob/41e1ab58d4c1872dd0e84039b2962c1c5aa23e14/public/Alabay%20Assets/Alabay%20Merch/black%20hoodie%20bck.png?raw=true",
     },
     {
-      image: '/Alabay Assets/Alabay Merch/cap mockup.png',
-      backgroundImage: '/Alabay Assets/Alabay Merch/blue cap bck.png',
-      title: 'Blue Cap',
-      description: 'This is a blue cap',
+      image:
+        "https://github.com/newdevatgit/alabay-website/blob/41e1ab58d4c1872dd0e84039b2962c1c5aa23e14/public/Alabay%20Assets/Alabay%20Merch/cap%20mockup.png?raw=true",
+      backgroundImage:
+        "https://github.com/newdevatgit/alabay-website/blob/41e1ab58d4c1872dd0e84039b2962c1c5aa23e14/public/Alabay%20Assets/Alabay%20Merch/blue%20cap%20bck.png?raw=true",
     },
     {
-      image: '/Alabay Assets/Alabay Merch/pink tshirt.png',
-      backgroundImage: '/Alabay Assets/Alabay Merch/pink tee bck.png',
-      title: 'Pink T-Shirt',
-      description: 'This is a pink t-shirt',
+      image:
+        "https://github.com/newdevatgit/alabay-website/blob/41e1ab58d4c1872dd0e84039b2962c1c5aa23e14/public/Alabay%20Assets/Alabay%20Merch/pink%20tshirt.png?raw=true",
+      backgroundImage:
+        "https://github.com/newdevatgit/alabay-website/blob/41e1ab58d4c1872dd0e84039b2962c1c5aa23e14/public/Alabay%20Assets/Alabay%20Merch/pink%20tee%20bck.png?raw=true",
+    },
+    {
+      image:
+        "https://github.com/newdevatgit/alabay-website/blob/41e1ab58d4c1872dd0e84039b2962c1c5aa23e14/public/Alabay%20Assets/Alabay%20Merch/yellow%20tshirt.png?raw=true",
+      backgroundImage:
+        "https://github.com/newdevatgit/alabay-website/blob/41e1ab58d4c1872dd0e84039b2962c1c5aa23e14/public/Alabay%20Assets/Alabay%20Merch/yellow%20tee%20bck.png?raw=true",
     },
   ];
 
@@ -53,24 +59,19 @@ const ProductCarousel = () => {
           alt={products[currentIndex].title}
           className="product-image"
         />
-        <div className="product-discover-button">
-          <button>Discover</button>
+        <div className="product-text-boxes">
+          <div className="product-bottom-left">
+            <h2>{products[currentIndex].title}</h2>
+            <p>{products[currentIndex].description}</p>
+          </div>
         </div>
         <div className="product-arrows">
           <button className="product-prev-arrow" onClick={handlePrev}>
-            <i className="fas fa-chevron-left" />
+            &#10094;
           </button>
           <button className="product-next-arrow" onClick={handleNext}>
-            <i className="fas fa-chevron-right" />
+            &#10095;
           </button>
-        </div>
-        <div className="product-text-boxes">
-          <div className="product-bottom-left">
-            <p>{products[currentIndex].description}</p>
-          </div>
-          <div className="product-top-right">
-            <p>{products[currentIndex].title}</p >
-          </div>
         </div>
       </div>
     </div>
